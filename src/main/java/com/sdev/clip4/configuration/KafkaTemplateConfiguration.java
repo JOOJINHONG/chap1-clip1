@@ -1,4 +1,4 @@
-package com.sdev.clip3.configuration;
+package com.sdev.clip4.configuration;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;

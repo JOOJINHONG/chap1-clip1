@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.sdev'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = "1.9"
+sourceCompatibility = "11"
 
 repositories {
 	mavenCentral()
@@ -18,6 +18,8 @@ dependencies {
 	//kafka
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation 'org.apache.kafka:kafka-clients:3.1.0'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.5'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 }
@@ -25,4 +27,4 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
-targetCompatibility = JavaVersion.VERSION_1_9
+targetCompatibility = JavaVersion.VERSION_11

@@ -1,6 +1,7 @@
 package com.sdev.clip3.consumer;
 
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,4 +12,15 @@ public class ClipConsumer {
         System.out.println(message);
     }
 
+    @KafkaListener(id = "clip3-bytes-id", topics = "clip3-bytes")
+    public void listenClip3Bytes(String message) {
+        System.out.println(message);
+    }
+
+    @KafkaListener(id = "clip3-request-id", topics = "clip3-request")
+    @SendTo
+    public String listenClipRequest(String message) {
+        System.out.println(message);
+        return "pong Clip3";
+    }
 }
